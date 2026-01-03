@@ -1,0 +1,672 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Home Page Styles */
+.home-page {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* Pink Dazzling Background */
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        rgba(255, 182, 193, 0.9) 0%,
+        rgba(255, 192, 203, 0.85) 25%,
+        rgba(255, 105, 180, 0.8) 50%,
+        rgba(255, 20, 147, 0.85) 75%,
+        rgba(255, 182, 193, 0.9) 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    z-index: -1;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Add sparkle effect */
+.background-overlay::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+        radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+        radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+        radial-gradient(circle at 60% 20%, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
+    background-size: 200px 200px, 250px 250px, 180px 180px, 220px 220px;
+    animation: sparkle 3s ease-in-out infinite;
+    opacity: 0.6;
+}
+
+@keyframes sparkle {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.8; }
+}
+
+/* Scattered Emojis */
+.scattered-emojis {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.scattered-emojis .emoji {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.7;
+    animation: emojiFloat 6s ease-in-out infinite;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.scattered-emojis .emoji:nth-child(1) {
+    top: 10%;
+    left: 8%;
+    animation-delay: 0s;
+    font-size: 2.2rem;
+}
+
+.scattered-emojis .emoji:nth-child(2) {
+    top: 25%;
+    right: 12%;
+    animation-delay: 1s;
+    font-size: 1.8rem;
+}
+
+.scattered-emojis .emoji:nth-child(3) {
+    top: 45%;
+    left: 5%;
+    animation-delay: 2s;
+    font-size: 2.5rem;
+}
+
+.scattered-emojis .emoji:nth-child(4) {
+    bottom: 30%;
+    right: 8%;
+    animation-delay: 0.5s;
+    font-size: 2rem;
+}
+
+.scattered-emojis .emoji:nth-child(5) {
+    top: 60%;
+    right: 15%;
+    animation-delay: 1.5s;
+    font-size: 2.3rem;
+}
+
+.scattered-emojis .emoji:nth-child(6) {
+    bottom: 20%;
+    left: 12%;
+    animation-delay: 2.5s;
+    font-size: 1.9rem;
+}
+
+.scattered-emojis .emoji:nth-child(7) {
+    top: 15%;
+    left: 50%;
+    animation-delay: 3s;
+    font-size: 2.1rem;
+}
+
+.scattered-emojis .emoji:nth-child(8) {
+    top: 35%;
+    right: 25%;
+    animation-delay: 0.8s;
+    font-size: 1.7rem;
+}
+
+.scattered-emojis .emoji:nth-child(9) {
+    top: 70%;
+    left: 20%;
+    animation-delay: 1.8s;
+    font-size: 2.4rem;
+}
+
+.scattered-emojis .emoji:nth-child(10) {
+    bottom: 40%;
+    right: 20%;
+    animation-delay: 2.2s;
+    font-size: 2rem;
+}
+
+.scattered-emojis .emoji:nth-child(11) {
+    top: 50%;
+    left: 30%;
+    animation-delay: 0.3s;
+    font-size: 1.9rem;
+}
+
+.scattered-emojis .emoji:nth-child(12) {
+    bottom: 50%;
+    right: 30%;
+    animation-delay: 1.2s;
+    font-size: 2.2rem;
+}
+
+.scattered-emojis .emoji:nth-child(13) {
+    top: 80%;
+    left: 45%;
+    animation-delay: 2.8s;
+    font-size: 1.8rem;
+}
+
+.scattered-emojis .emoji:nth-child(14) {
+    bottom: 60%;
+    left: 25%;
+    animation-delay: 0.6s;
+    font-size: 2.3rem;
+}
+
+.scattered-emojis .emoji:nth-child(15) {
+    top: 5%;
+    right: 30%;
+    animation-delay: 1.7s;
+    font-size: 2rem;
+}
+
+@keyframes emojiFloat {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.6;
+    }
+    25% {
+        transform: translateY(-15px) rotate(5deg);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(-25px) rotate(-5deg);
+        opacity: 0.7;
+    }
+    75% {
+        transform: translateY(-10px) rotate(3deg);
+        opacity: 0.9;
+    }
+}
+
+/* Center Content */
+.center-content {
+    text-align: center;
+    z-index: 1;
+    margin-top: 20px;
+    margin-bottom: auto;
+}
+
+.main-image-container {
+    margin-bottom: 20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.main-image {
+    width: 65%;
+    max-width: 600px;
+    height: auto;
+    max-height: 75vh;
+    object-fit: contain;
+}
+
+.main-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 10px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    font-weight: 400;
+    letter-spacing: 2px;
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Bottom Text */
+.bottom-text {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 1;
+    width: 90%;
+    max-width: 500px;
+}
+
+.invite-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: #fff;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+    margin-bottom: 8px;
+}
+
+.date-text {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    font-style: italic;
+}
+
+/* Events Grid */
+.events-grid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.event-corner {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    pointer-events: all;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    z-index: 2;
+}
+
+.event-corner:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+.event-corner.top-left {
+    top: 15px;
+    left: 15px;
+}
+
+.event-corner.top-right {
+    top: 15px;
+    right: 15px;
+}
+
+.event-corner.bottom-left {
+    bottom: 80px;
+    left: 15px;
+}
+
+.event-corner.bottom-right {
+    bottom: 80px;
+    right: 15px;
+}
+
+.event-image-wrapper {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    border: 3px solid rgba(255, 255, 255, 0.6);
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+}
+
+.event-corner:hover .event-image-wrapper {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.9);
+}
+
+.event-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.event-name {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2rem;
+    color: #fff;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Event Overlay */
+.event-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.event-overlay.active {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Blurred Background */
+.overlay-background-blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: -1;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 2rem;
+    color: #ff69b4;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn:hover {
+    background: #fff;
+    transform: rotate(90deg);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Event Content */
+.event-content {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 30px;
+    padding: 40px 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: slideUp 0.5s ease;
+    z-index: 10;
+    pointer-events: auto;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.event-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #ff69b4;
+    text-align: center;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.event-details {
+    margin-bottom: 30px;
+}
+
+.detail-item {
+    margin-bottom: 15px;
+    padding: 15px;
+    background: rgba(255, 182, 193, 0.1);
+    border-radius: 15px;
+    border-left: 4px solid #ff69b4;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: #ff1493;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.detail-value {
+    color: #333;
+    font-size: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Scattered Images */
+.event-images-scattered {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 15;
+}
+
+.scattered-image {
+    position: absolute;
+    width: 180px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    border: 3px solid rgba(255, 182, 193, 0.5);
+    animation: floatImage 4s ease-in-out infinite;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+@keyframes floatImage {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) rotate(-5deg);
+    }
+    20% {
+        opacity: 1;
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-15px) rotate(5deg);
+    }
+    80% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-10px) rotate(-3deg);
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2.2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .main-image {
+        width: 70%;
+        max-width: 500px;
+        max-height: 70vh;
+    }
+
+    .event-image-wrapper {
+        width: 60px;
+        height: 60px;
+    }
+
+    .event-name {
+        font-size: 1rem;
+    }
+
+    .event-corner.top-left,
+    .event-corner.top-right {
+        top: 10px;
+    }
+
+    .event-corner.top-left,
+    .event-corner.bottom-left {
+        left: 10px;
+    }
+
+    .event-corner.top-right,
+    .event-corner.bottom-right {
+        right: 10px;
+    }
+
+    .event-corner.bottom-left,
+    .event-corner.bottom-right {
+        bottom: 70px;
+    }
+
+    .invite-text {
+        font-size: 1.2rem;
+    }
+
+    .date-text {
+        font-size: 0.8rem;
+    }
+
+    .scattered-emojis .emoji {
+        font-size: 1.5rem;
+    }
+
+    .scattered-emojis .emoji:nth-child(1),
+    .scattered-emojis .emoji:nth-child(3),
+    .scattered-emojis .emoji:nth-child(5),
+    .scattered-emojis .emoji:nth-child(9),
+    .scattered-emojis .emoji:nth-child(12),
+    .scattered-emojis .emoji:nth-child(14) {
+        font-size: 1.7rem;
+    }
+
+    .event-content {
+        padding: 30px 20px;
+        width: 95%;
+    }
+
+    .event-title {
+        font-size: 2rem;
+    }
+
+    .scattered-image {
+        width: 140px;
+        height: 170px;
+    }
+
+    .close-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+        top: 15px;
+        right: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 1.8rem;
+    }
+
+    .main-image {
+        width: 85%;
+        max-width: 600px;
+        max-height: 85vh;
+    }
+
+    .event-image-wrapper {
+        width: 50px;
+        height: 50px;
+    }
+
+    .event-name {
+        font-size: 0.9rem;
+    }
+
+    .scattered-image {
+        width: 120px;
+        height: 150px;
+    }
+
+    .scattered-emojis .emoji {
+        font-size: 1.3rem;
+    }
+
+    .scattered-emojis .emoji:nth-child(1),
+    .scattered-emojis .emoji:nth-child(3),
+    .scattered-emojis .emoji:nth-child(5),
+    .scattered-emojis .emoji:nth-child(9),
+    .scattered-emojis .emoji:nth-child(12),
+    .scattered-emojis .emoji:nth-child(14) {
+        font-size: 1.5rem;
+    }
+}
+

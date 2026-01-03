@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sona & Gourav Wedding Invitation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Home Page -->
+    <div class="home-page" id="homePage">
+        <!-- Background with pink dazzling effect -->
+        <div class="background-overlay"></div>
+        
+        <!-- Scattered Emojis -->
+        <div class="scattered-emojis">
+            <span class="emoji">💖</span>
+            <span class="emoji">⭐</span>
+            <span class="emoji">✨</span>
+            <span class="emoji">💖</span>
+            <span class="emoji">🌷</span>
+            <span class="emoji">🌻</span>
+            <span class="emoji">✨</span>
+            <span class="emoji">⭐</span>
+            <span class="emoji">💖</span>
+            <span class="emoji">🌷</span>
+            <span class="emoji">🌻</span>
+            <span class="emoji">⭐</span>
+            <span class="emoji">✨</span>
+            <span class="emoji">💖</span>
+            <span class="emoji">🌷</span>
+            <span class="emoji">💖</span>
+            <span class="emoji">⭐</span>
+            <span class="emoji">✨</span>
+            <span class="emoji">💖</span>
+            <span class="emoji">🌷</span>
+            <span class="emoji">🌻</span>
+            <span class="emoji">✨</span>
+            <span class="emoji">⭐</span>
+            <span class="emoji">💖</span>
+            <span class="emoji">🌷</span>
+            <span class="emoji">🌻</span>
+            <span class="emoji">⭐</span>
+            <span class="emoji">✨</span>
+            <span class="emoji">💖</span>
+            <span class="emoji">🌷</span>
+            <span class="emoji">💖</span>
+            <span class="emoji">⭐</span>
+            <span class="emoji">✨</span>
+            <span class="emoji">💖</span>
+            <span class="emoji">🌷</span>
+            <span class="emoji">🌻</span>
+            <span class="emoji">✨</span>
+            <span class="emoji">⭐</span>
+            <span class="emoji">💖</span>
+            <span class="emoji">🌷</span>
+            <span class="emoji">🌻</span>
+            <span class="emoji">⭐</span>
+            <span class="emoji">✨</span>
+            <span class="emoji">💖</span>
+            <span class="emoji">🌷</span>
+        </div>
+        
+        <!-- Center Content -->
+        <div class="center-content">
+            <div class="main-image-container">
+                <img src="couple.png" alt="Couple" class="main-image">
+            </div>
+            <h1 class="main-title">Sona & Gourav</h1>
+            <p class="subtitle">Wedding Invitation</p>
+        </div>
+
+        <!-- Bottom Text -->
+        <div class="bottom-text">
+            <p class="invite-text">Join us in celebrating our special day</p>
+            <p class="date-text">Click on any event to know more</p>
+        </div>
+
+        <!-- Four Corner Events -->
+        <div class="events-grid">
+            <div class="event-corner top-left" data-event="haldi">
+                <div class="event-image-wrapper">
+                    <img src="phere-corner-2.jpeg" alt="Haldi" class="event-image">
+                </div>
+                <p class="event-name">Haldi</p>
+            </div>
+
+            <div class="event-corner top-right" data-event="mehandi">
+                <div class="event-image-wrapper">
+                    <img src="phere-corner.jpeg" alt="Mehandi" class="event-image">
+                </div>
+                <p class="event-name">Mehandi</p>
+            </div>
+
+            <div class="event-corner bottom-left" data-event="sangeet">
+                <div class="event-image-wrapper">
+                    <img src="sangeet-corner.jpeg" alt="Sangeet" class="event-image">
+                </div>
+                <p class="event-name">Sangeet</p>
+            </div>
+
+            <div class="event-corner bottom-right" data-event="phere">
+                <div class="event-image-wrapper">
+                    <img src="haldi-corner.jpeg" alt="Phere" class="event-image">
+                </div>
+                <p class="event-name">Phere</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Event Overlay -->
+    <div class="event-overlay" id="eventOverlay">
+        <div class="overlay-background-blur"></div>
+        <button class="close-btn" id="closeBtn">&times;</button>
+        
+        <div class="event-images-scattered" id="eventImages">
+            <!-- Scattered images will be populated by JavaScript -->
+        </div>
+        
+        <div class="event-content">
+            <h2 class="event-title" id="eventTitle"></h2>
+            
+            <div class="event-details" id="eventDetails">
+                <!-- Event details will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
