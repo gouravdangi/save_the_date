@@ -253,6 +253,8 @@ body {
     font-weight: 900;
     color: #fff;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    margin-top: -10px;
+    line-height: 1;
     margin-bottom: 5px;
     animation: fadeInUp 1s ease-out;
 }
@@ -612,7 +614,7 @@ body {
     .main-title {
         font-size: 3.5rem;
         font-weight: 900;
-        margin-top: -8px;
+        margin-top: -10px;
         line-height: 1;
     }
 
