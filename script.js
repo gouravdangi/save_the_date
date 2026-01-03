@@ -25,7 +25,6 @@ const eventData = {
             { label: "Dress Code", value: "Green/Pink" }
         ],
         images: [
-            "6.jpeg",
             "7.jpeg",
             "8.jpeg",
             "9.jpeg",
@@ -55,11 +54,9 @@ const eventData = {
         details: [
             { label: "Date", value: "26th Mach" },
             { label: "Time", value: "Evening" },
-            { label: "Venue", value: "Pilani" },
-            { label: "Dress Code", value: "Traditional Red/Gold" }
+            { label: "Venue", value: "Pilani" }
         ],
         images: [
-            "16.jpeg",
             "17.jpeg",
             "18.jpeg",
             "19.jpeg",
