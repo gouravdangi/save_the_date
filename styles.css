@@ -633,9 +633,9 @@ body {
     }
 
     .main-image {
-        width: 40%;
-        max-width: 280px;
-        max-height: 36vh;
+        width: 50%;
+        max-width: 300px;
+        max-height: 42vh;
     }
 
     .event-image-wrapper {
