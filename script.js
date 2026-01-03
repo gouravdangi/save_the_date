@@ -6,7 +6,7 @@ const eventData = {
             { label: "Date", value: "25th March" },
             { label: "Time", value: "Morning" },
             { label: "Venue", value: "Pilani" },
-            { label: "Dress Code", value: "Yellow" }
+            { label: "Dress Code", value: "Yellow/Orange" }
         ],
         images: [
             "1.jpeg",
@@ -231,8 +231,8 @@ function openEvent(eventName) {
             img.style.left = 'auto';
         }
         
-        // Sequential delay - each image appears 1 second after the previous one
-        const sequentialDelay = index * 2 + 2; // 0s, 1s, 2s, 3s, 4s...
+        // Sequential delay - each image appears 2 seconds after the previous one
+        const sequentialDelay = index * 2 + 1.5; // 1.5s, 3.5s, 5.5s, 7.5s, 9.5s...
         const randomDuration = 3 + Math.random() * 2; // 3-5 seconds
         img.style.animationDelay = `${sequentialDelay}s`;
         img.style.animationDuration = `${randomDuration}s`;
@@ -274,4 +274,59 @@ document.addEventListener('keydown', (e) => {
         closeEvent();
     }
 });
+
+// First load animation sequence
+function initFirstLoadAnimation() {
+    const bottomText = document.querySelector('.bottom-text');
+    const eventsGrid = document.querySelector('.events-grid');
+    const centerContent = document.querySelector('.center-content');
+    
+    // Check if this is the first load (using sessionStorage)
+    const hasLoadedBefore = sessionStorage.getItem('weddingSiteLoaded');
+    
+    if (!hasLoadedBefore) {
+        // Mark as loaded
+        sessionStorage.setItem('weddingSiteLoaded', 'true');
+        
+        // Set initial states
+        bottomText.classList.add('initial-load');
+        eventsGrid.classList.add('initial-load');
+        centerContent.classList.add('initial-hidden');
+        
+        // Step 1: Show bottom text in center (after a brief moment)
+        setTimeout(() => {
+            bottomText.style.opacity = '1';
+            
+            // Step 2: After text appears, start loading images with animation
+            setTimeout(() => {
+                eventsGrid.classList.remove('initial-load');
+                eventsGrid.classList.add('images-loading');
+                
+                // Step 3: After images finish appearing, move text to bottom
+                // Total time: 0.4s (last image delay) + 0.6s (animation duration) + buffer
+                setTimeout(() => {
+                    // Mark images as loaded to ensure they stay visible
+                    eventsGrid.classList.remove('images-loading');
+                    eventsGrid.classList.add('images-loaded');
+                    
+                    bottomText.classList.remove('initial-load');
+                    bottomText.classList.add('move-to-bottom');
+                    
+                    // Step 4: Show center content after text starts moving to bottom
+                    setTimeout(() => {
+                        centerContent.classList.remove('initial-hidden');
+                        centerContent.classList.add('visible');
+                    }, 400);
+                }, 1200); // Wait for all images to appear
+            }, 600); // Wait before showing images
+        }, 200); // Initial delay to show text
+    } else {
+        // Not first load - show everything normally
+        bottomText.style.opacity = '1';
+        centerContent.classList.add('visible');
+    }
+}
+
+// Initialize animation on page load
+window.addEventListener('DOMContentLoaded', initFirstLoadAnimation);
 
