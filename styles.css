@@ -614,7 +614,7 @@ body {
     .main-title {
         font-size: 3.5rem;
         font-weight: 900;
-        margin-top: -10px;
+        margin-top: -20px;
         line-height: 1;
     }
 
@@ -623,7 +623,7 @@ body {
     }
  
     .main-image-container {
-        margin-bottom: 0;
+        margin-bottom: -10px;
     }
 
     .main-image {
@@ -661,6 +661,10 @@ body {
     .event-corner.bottom-left,
     .event-corner.bottom-right {
         bottom: 70px;
+    }
+
+    .bottom-text {
+        margin-top: 4px;
     }
 
     .invite-text {
@@ -715,11 +719,11 @@ body {
     .main-title {
         font-size: 2.8rem;
         font-weight: 900;
-        margin-top: -6px;
+        margin-top: -20px;
         line-height: 1;
     }
     .main-image-container {
-        margin-bottom: 0;
+        margin-bottom: -10px;
     }
 
     .main-image {
@@ -737,6 +741,10 @@ body {
 
     .event-name {
         font-size: 0.9rem;
+    }
+
+    .bottom-text {
+        margin-top: 4px;
     }
 
     .scattered-image {
