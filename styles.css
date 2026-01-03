@@ -230,7 +230,7 @@ body {
 }
 
 .main-image-container {
-    margin-bottom: 20px;
+    margin-bottom: 8px;
     animation: float 3s ease-in-out infinite;
 }
 
@@ -249,11 +249,11 @@ body {
 
 .main-title {
     font-family: 'Dancing Script', cursive;
-    font-size: 3rem;
-    font-weight: 700;
+    font-size: 4.5rem;
+    font-weight: 900;
     color: #fff;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     animation: fadeInUp 1s ease-out;
 }
 
@@ -285,7 +285,7 @@ body {
     z-index: 1;
     width: 100%;
     max-width: 500px;
-    margin: 30px auto 0;
+    margin: 12px auto 0;
     opacity: 1;
 }
 
@@ -610,7 +610,8 @@ body {
     }
 
     .main-title {
-        font-size: 2.2rem;
+        font-size: 3.5rem;
+        font-weight: 900;
     }
 
     .subtitle {
@@ -704,7 +705,8 @@ body {
     }
 
     .main-title {
-        font-size: 1.8rem;
+        font-size: 2.8rem;
+        font-weight: 900;
     }
 
     .main-image {
