@@ -215,7 +215,8 @@ body {
     text-align: center;
     z-index: 1;
     margin-top: 20px;
-    margin-bottom: auto;
+    margin-bottom: 150px;
+    padding-bottom: 20px;
 }
 
 /* Initially hide center content on first load */
@@ -289,6 +290,7 @@ body {
     max-width: 500px;
     /* Initial state - centered on first load */
     opacity: 0;
+    margin-top: 30px;
 }
 
 /* Initial centered position for first load animation */
@@ -624,6 +626,10 @@ body {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+    .center-content {
+        margin-bottom: 180px;
+    }
+
     .main-title {
         font-size: 2.2rem;
     }
@@ -635,7 +641,9 @@ body {
     .main-image {
         width: 50%;
         max-width: 300px;
-        max-height: 42vh;
+        height: 50vh;
+        max-height: 50vh;
+        object-fit: contain;
     }
 
     .event-image-wrapper {
@@ -712,14 +720,20 @@ body {
 }
 
 @media (max-width: 480px) {
+    .center-content {
+        margin-bottom: 180px;
+    }
+
     .main-title {
         font-size: 1.8rem;
     }
 
     .main-image {
-        width: 44%;
+        width: 50%;
         max-width: 280px;
-        max-height: 40vh;
+        height: 50vh;
+        max-height: 50vh;
+        object-fit: contain;
     }
 
     .event-image-wrapper {
