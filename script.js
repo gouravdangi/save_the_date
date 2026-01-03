@@ -272,7 +272,6 @@ document.addEventListener('keydown', (e) => {
 
 // First load animation sequence
 function initFirstLoadAnimation() {
-    const bottomText = document.querySelector('.bottom-text');
     const eventsGrid = document.querySelector('.events-grid');
     const centerContent = document.querySelector('.center-content');
     
@@ -284,40 +283,28 @@ function initFirstLoadAnimation() {
         sessionStorage.setItem('weddingSiteLoaded', 'true');
         
         // Set initial states
-        bottomText.classList.add('initial-load');
         eventsGrid.classList.add('initial-load');
         centerContent.classList.add('initial-hidden');
         
-        // Step 1: Show bottom text in center (after a brief moment)
+        // Step 1: Start loading images with animation
         setTimeout(() => {
-            bottomText.style.opacity = '1';
+            eventsGrid.classList.remove('initial-load');
+            eventsGrid.classList.add('images-loading');
             
-            // Step 2: After text appears, start loading images with animation
+            // Step 2: After images finish appearing, show center content
+            // Total time: 0.4s (last image delay) + 0.6s (animation duration) + buffer
             setTimeout(() => {
-                eventsGrid.classList.remove('initial-load');
-                eventsGrid.classList.add('images-loading');
+                // Mark images as loaded to ensure they stay visible
+                eventsGrid.classList.remove('images-loading');
+                eventsGrid.classList.add('images-loaded');
                 
-                // Step 3: After images finish appearing, move text to bottom
-                // Total time: 0.4s (last image delay) + 0.6s (animation duration) + buffer
-                setTimeout(() => {
-                    // Mark images as loaded to ensure they stay visible
-                    eventsGrid.classList.remove('images-loading');
-                    eventsGrid.classList.add('images-loaded');
-                    
-                    bottomText.classList.remove('initial-load');
-                    bottomText.classList.add('move-to-bottom');
-                    
-                    // Step 4: Show center content after text starts moving to bottom
-                    setTimeout(() => {
-                        centerContent.classList.remove('initial-hidden');
-                        centerContent.classList.add('visible');
-                    }, 400);
-                }, 1200); // Wait for all images to appear
-            }, 600); // Wait before showing images
-        }, 200); // Initial delay to show text
+                // Show center content (which includes bottom text)
+                centerContent.classList.remove('initial-hidden');
+                centerContent.classList.add('visible');
+            }, 1200); // Wait for all images to appear
+        }, 600); // Wait before showing images
     } else {
         // Not first load - show everything normally
-        bottomText.style.opacity = '1';
         centerContent.classList.add('visible');
     }
 }
