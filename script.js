@@ -10,7 +10,6 @@ const eventData = {
         ],
         images: [
             "1.jpeg",
-            "3.jpeg",
             "4.jpeg",
             "5-1.jpeg"
         ]
