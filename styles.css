@@ -617,6 +617,10 @@ body {
     .subtitle {
         font-size: 1rem;
     }
+ 
+    .main-image-container {
+        margin-bottom: 4px;
+    }
 
     .main-image {
         width: 50%;
@@ -707,6 +711,9 @@ body {
     .main-title {
         font-size: 2.8rem;
         font-weight: 900;
+    }
+    .main-image-container {
+        margin-bottom: 4px;
     }
 
     .main-image {
