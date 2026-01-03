@@ -235,7 +235,7 @@ function openEvent(eventName) {
         }
         
         // Sequential delay - each image appears 1 second after the previous one
-        const sequentialDelay = index * 1 + 2; // 0s, 1s, 2s, 3s, 4s...
+        const sequentialDelay = index * 2 + 2; // 0s, 1s, 2s, 3s, 4s...
         const randomDuration = 3 + Math.random() * 2; // 3-5 seconds
         img.style.animationDelay = `${sequentialDelay}s`;
         img.style.animationDuration = `${randomDuration}s`;
