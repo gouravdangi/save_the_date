@@ -218,6 +218,16 @@ body {
     margin-bottom: auto;
 }
 
+/* Initially hide center content on first load */
+.center-content.initial-hidden {
+    opacity: 0;
+}
+
+.center-content.visible {
+    opacity: 1;
+    animation: fadeInUp 1s ease-out forwards; /* Keep final state */
+}
+
 .main-image-container {
     margin-bottom: 20px;
     animation: float 3s ease-in-out infinite;
@@ -277,6 +287,25 @@ body {
     z-index: 1;
     width: 90%;
     max-width: 500px;
+    /* Initial state - centered on first load */
+    opacity: 0;
+}
+
+/* Initial centered position for first load animation */
+.bottom-text.initial-load {
+    top: 50%;
+    bottom: auto;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    transition: none;
+}
+
+/* Animation to move to bottom position */
+.bottom-text.move-to-bottom {
+    top: auto;
+    bottom: 20px;
+    transform: translateX(-50%);
+    transition: top 1.2s ease-in-out, bottom 1.2s ease-in-out, transform 1.2s ease-in-out;
 }
 
 .invite-text {
@@ -302,6 +331,57 @@ body {
     top: 0;
     left: 0;
     pointer-events: none;
+}
+
+/* Initially hide event images on first load */
+.events-grid.initial-load .event-corner {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+/* Animation for event images appearing */
+.events-grid.images-loading .event-corner {
+    animation: imageAppear 0.6s ease-out forwards;
+}
+
+.events-grid.images-loading .event-corner:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.events-grid.images-loading .event-corner:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.events-grid.images-loading .event-corner:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.events-grid.images-loading .event-corner:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+/* Keep images visible after animation completes */
+.events-grid .event-corner {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Ensure images stay visible after animation completes */
+.events-grid.images-loaded .event-corner {
+    opacity: 1;
+    transform: scale(1);
+    animation: none; /* Remove animation to keep final state */
+}
+
+@keyframes imageAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
 }
 
 .event-corner {
