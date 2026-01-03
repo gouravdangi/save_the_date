@@ -24,7 +24,6 @@ const eventData = {
         ],
         images: [
             "8.jpeg",
-            "9.jpeg",
             "10.jpeg",
             "13.jpeg",
         ]
