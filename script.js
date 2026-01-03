@@ -10,7 +10,6 @@ const eventData = {
         ],
         images: [
             "1.jpeg",
-            "2.jpeg",
             "3.jpeg",
             "4.jpeg",
             "5-1.jpeg"
@@ -25,11 +24,10 @@ const eventData = {
             { label: "Dress Code", value: "Green" }
         ],
         images: [
-            "7.jpeg",
             "8.jpeg",
             "9.jpeg",
             "10.jpeg",
-            "10-1.jpeg"
+            "13.jpeg",
         ]
     },
     sangeet: {
@@ -43,9 +41,7 @@ const eventData = {
         images: [
             "11.jpeg",
             "12.jpeg",
-            "13.jpeg",
             "14.jpeg",
-            "15.jpeg",
             "15-1.jpeg"
         ]
     },
@@ -58,7 +54,6 @@ const eventData = {
         ],
         images: [
             "17.jpeg",
-            "18.jpeg",
             "19.jpeg",
             "20.jpeg",
             "20-1.jpeg"
