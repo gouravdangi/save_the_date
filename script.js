@@ -6,7 +6,7 @@ const eventData = {
             { label: "Date", value: "25th March" },
             { label: "Time", value: "Morning" },
             { label: "Venue", value: "Pilani" },
-            { label: "Dress Code", value: "Yellow/Orange" }
+            { label: "Dress Code", value: "Yellow" }
         ],
         images: [
             "1.jpeg",
@@ -22,7 +22,7 @@ const eventData = {
             { label: "Date", value: "25th March" },
             { label: "Time", value: "Afternoon" },
             { label: "Venue", value: "Pilani" },
-            { label: "Dress Code", value: "Green/Pink" }
+            { label: "Dress Code", value: "Green" }
         ],
         images: [
             "7.jpeg",
