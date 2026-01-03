@@ -239,10 +239,10 @@ body {
 }
 
 .main-image {
-    width: 35%;
-    max-width: 250px;
+    width: 30%;
+    max-width: 200px;
     height: auto;
-    max-height: 40vh;
+    max-height: 35vh;
     object-fit: contain;
 }
 
