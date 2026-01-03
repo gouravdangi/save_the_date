@@ -619,7 +619,7 @@ body {
     }
  
     .main-image-container {
-        margin-bottom: 4px;
+        margin-bottom: 0;
     }
 
     .main-image {
@@ -713,7 +713,7 @@ body {
         font-weight: 900;
     }
     .main-image-container {
-        margin-bottom: 4px;
+        margin-bottom: 0;
     }
 
     .main-image {
